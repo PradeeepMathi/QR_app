@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Input from "./Components/Input";
+import {useState} from 'react'
+import Image from "./Components/Image";
+import './App.css'
+
 
 function App() {
+  const [dataInput,setDataInput] =useState('');
+  const [sizeInput,setSizeInput] =useState('')
+  const [img,setImg]=useState()
+  const [loading,setLoading]=useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <div className="app-container">
+   <Image img={img} loading={loading}/>
+   <Input dataInput={dataInput} setDataInput={setDataInput} sizeInput={sizeInput} setSizeInput={setSizeInput} setImg={setImg} setLoading={setLoading} img={img}/>
+   </div>
+   </>
+   
   );
 }
 
